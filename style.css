@@ -1,0 +1,183 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    /***** gradients *****/
+    --scissors-gradient-one: hsl(39, 89%, 49%);
+    --scissors-gradient-two: hsl(40, 84%, 53%);
+    --paper-gradient-one: hsl(230, 89%, 62%);
+    --paper-gradient-two: hsl(230, 89%, 65%);
+    --rock-gradient-one: hsl(349, 71%, 52%);
+    --rock-gradient-two: hsl(349, 70%, 56%);
+    --lizard-gradient-one: hsl(261, 73%, 60%);
+    --lizard-gradient-two: hsl(261, 72%, 63%);
+    --cyan-gradient-one: hsl(189, 59%, 53%);
+    --cyan-gradient-two: hsl(189, 58%, 57%);
+    /***** text and header *****/
+    --dark-text: hsl(229, 25%, 31%);
+    --score-text: hsl(229, 64%, 46%);
+    --header-outline: hsl(217, 16%, 45%);
+    /***** background *****/
+    --background-gradient-one: hsl(214, 47%, 23%);
+    --background-gradient-two: hsl(237, 49%, 15%);
+}
+html {
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image:radial-gradient(ellipse at center top, var(--background-gradient-one), var(--background-gradient-two));
+
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+button {
+    border: none;
+}
+
+/***** header *****/
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    width: 40rem;
+    border: 2px solid var(--header-outline);
+    border-radius: 1rem;
+    height: 7.5rem;
+}
+.score-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 8rem;
+    height: 100%;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1px;
+}
+h1 {
+    color: var(--score-text);
+    font-size: 1rem;
+    font-weight: 600;
+}
+h2 {
+    color: var(--dark-text);
+    font-size: 4rem;
+    line-height: 3.5rem;
+}
+
+/***** main *****/
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 21rem;
+    width: 31rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(./images/bg-triangle.svg);
+    margin: 1rem;
+}
+.rps-btn {
+    margin: 0 2rem;
+    width: 9.5rem;
+    height: 9.5rem;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: inset 0 5px 1px rgb(196, 196, 224);
+    transition: 0.2s;
+}
+.rps-btn:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+.rps-btn--paper {
+    border: 1rem solid var(--paper-gradient-two);
+    box-shadow: inset 0 5px 1px rgb(196, 196, 224), 0 5px 1px var(--paper-gradient-one);
+}
+.rps-btn--scissors {
+    border: 1rem solid var(--scissors-gradient-two);
+    box-shadow: inset 0 5px 1px rgb(196, 196, 224), 0 5px 1px var(--scissors-gradient-one);
+}
+.rps-btn--rock {
+    border: 1rem solid var(--rock-gradient-two);
+    box-shadow: inset 0 5px 1px rgb(196, 196, 224), 0 5px 1px var(--rock-gradient-one);
+}
+
+/****** footer ******/
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.rules {
+    background-color: transparent;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    color: white;
+    border: 2px solid var(--header-outline);
+}
+
+
+/***** media *****/
+@media (max-width: 665px) {
+    header {
+        width: 30rem;
+    }
+}
+@media (max-width: 500px) {
+    :root {
+        font-size: 14px;
+    }
+    main {
+        margin: 2rem;
+        /* height: 23rem; */
+        background-size: 60%;
+    }
+    footer {
+        justify-content: center;
+    }
+}
+@media (max-width: 440px) {
+    :root {
+        font-size: 12px;
+    }
+    main {
+        margin: 2rem;
+        background-size: 60%;
+    }
+    footer {
+        justify-content: center;
+    }
+}
+@media (max-width: 375px) {
+    :root {
+        font-size: 10px;
+    }
+    body {
+        height: 100vh;
+        justify-content: space-between;
+        padding: 5rem 0;
+    }
+    main {
+        margin: 2rem;
+        height: 25rem;
+        background-size: 60%;
+    }
+    .rps-btn {
+        width: 11rem;
+        height: 11rem;
+    }
+    footer {
+        justify-content: center;
+    }
+}
