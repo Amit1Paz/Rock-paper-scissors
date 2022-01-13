@@ -23,7 +23,6 @@
     --background-gradient-one: hsl(214, 47%, 23%);
     --background-gradient-two: hsl(237, 49%, 15%);
     /***** btns *****/
-    --placeholder: rgb(34, 34, 61);
     --inner-shadow: rgb(196, 196, 224);
     --winner-shadow: rgba(255, 255, 255, 0.1);
 }
@@ -121,13 +120,6 @@ h4 {
     transition: 0.2s;
     font-weight: 600;
 }
-.placeholder {
-    margin: 0 2rem;
-    width: 9.5rem;
-    height: 9.5rem;
-    border-radius: 50%;
-    background-color: var(--placeholder)
-}
 /***** btns *****/
 .rps-btn {
     margin: 0 2rem;
@@ -171,4 +163,9 @@ footer {
     border-radius: 5px;
     color: white;
     border: 2px solid var(--header-outline);
+}
+
+/***** hiding elements *****/
+.transparent {
+    display: none;
 }
