@@ -7,6 +7,7 @@ const computerChoise = document.querySelector('.computer-choise');
 const matchResult = document.querySelector('.match-result');
 const playAgainBtn = document.querySelector('.play-again-btn');
 const scoreDisplay = document.querySelector('.score-box__score');
+const record = document.querySelector('.record')
 
 // create user and computer 
 let user = {
@@ -129,6 +130,7 @@ function dicideWinner () {
     } else {
         if (user.highestScore < user.score) {
             user.highestScore = user.score;
+            record.textContent = 'RECORD ' + user.highestScore; 
         }
         user.score = 0;
         matchResult.appendChild(h3Tag);
