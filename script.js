@@ -122,6 +122,7 @@ function dicideWinner () {
         user.score++
         matchResult.appendChild(h3Tag);
         matchResult.lastChild.textContent = 'YOU WIN';
+        userSelectionDisplay.lastChild.classList.add('winner');
     } else if ( user.selection === computer.selection) {
         matchResult.appendChild(h3Tag);
         matchResult.lastChild.textContent = 'IT\'S A TIE';
@@ -132,6 +133,8 @@ function dicideWinner () {
         user.score = 0;
         matchResult.appendChild(h3Tag);
         matchResult.lastChild.textContent = 'YOU LOSE';
+        computerChoise.lastChild.classList.add('winner')
+
     }
     renderPlayAgainBtn();
 }
