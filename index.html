@@ -6,6 +6,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./responsive.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
@@ -19,14 +20,29 @@
     </div>
   </header>
   <main>
-    <div class="choose-container">
+    <div class="choose-container transparent">
       <button class="rps-btn rps-btn--paper"><img src="./images/icon-paper.svg" alt="Paper"></button>
       <button class="rps-btn rps-btn--scissors"><img src="./images/icon-scissors.svg" alt="Scissors"></button>
       <button class="rps-btn rps-btn--rock"><img src="./images/icon-rock.svg" alt="Rock"></button>
     </div>
+    <!-- <div class="match-container">
+      <div class="user-choise">
+        <h4 class="user-title">YOU PICKED</h4>
+        <button class="rps-btn rps-btn--paper winner"><img src="./images/icon-paper.svg" alt="Paper"></button>
+      </div>
+      <div class="match-result">
+        <h3>YOU WIN</h3>
+        <button class="play-again-btn">PLAY AGAIN</button>
+      </div>
+      <div class="computer-choise">
+        <h4 class="computer-title">THE HOUSE PICKED</h4>
+        <div class="placeholder"></div>
+        <button class="rps-btn rps-btn--rock"><img src="./images/icon-rock.svg" alt="Rock"></button>
+      </div> -->
+    </div>
   </main>
   <footer>
-    <button class="rules">RULES</button>
+    <button class="rules-btn">RULES</button>
   </footer>
 </body>
 </html>
