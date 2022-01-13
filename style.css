@@ -107,9 +107,18 @@ h2 {
 .match-result {
     margin: 0 1.5rem;
 }
+@keyframes announceWinner {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
 h3 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
+    animation: announceWinner 1s;
 }
 h4 {
     margin-bottom: 3rem;
@@ -119,6 +128,7 @@ h4 {
     border-radius: 0.3rem;
     transition: 0.2s;
     font-weight: 600;
+    animation: announceWinner 1s;
 }
 /***** btns *****/
 .rps-btn {
