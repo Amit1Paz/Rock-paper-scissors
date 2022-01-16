@@ -44,7 +44,7 @@ function renderSelection () {
     }
 };
  
-// render rps buttons functions 
+// render rps buttons function 
 function renderRpsBtns (kind) {
     const imgTag = document.createElement('img');
     userSelectionDisplay.lastChild.classList.add('rps-btn--' + kind);
@@ -130,7 +130,7 @@ function dicideWinner () {
     } else {
         if (user.highestScore < user.score) {
             user.highestScore = user.score;
-            record.textContent = 'RECORD ' + user.highestScore; 
+            record.textContent = 'RECORD: ' + user.highestScore; 
         }
         user.score = 0;
         matchResult.appendChild(h3Tag);
