@@ -7,7 +7,10 @@ const computerChoise = document.querySelector('.computer-choise');
 const matchResult = document.querySelector('.match-result');
 const playAgainBtn = document.querySelector('.play-again-btn');
 const scoreDisplay = document.querySelector('.score-box__score');
-const record = document.querySelector('.record')
+const record = document.querySelector('.record');
+const rulesBtn = document.querySelector('.rules-btn');
+const rulesPopup = document.querySelector('.rules-popup');
+const closeRulesBtn = document.querySelector('.rules-popup__close')
 
 // create user and computer 
 let user = {
@@ -116,29 +119,30 @@ function createComputerSelection () {
 
 // dicide who is the winner
 function dicideWinner () {
-    const h3Tag = document.createElement('h3');
-    if (user.selection === 'paper' && computer.selection === 'rock'
-    || user.selection === 'scissors' && computer.selection === 'paper'
-    || user.selection === 'rock' && computer.selection === 'scissors') {
-        user.score++
-        matchResult.appendChild(h3Tag);
-        matchResult.lastChild.textContent = 'YOU WIN';
-        userSelectionDisplay.lastChild.classList.add('winner');
-    } else if ( user.selection === computer.selection) {
-        matchResult.appendChild(h3Tag);
-        matchResult.lastChild.textContent = 'IT\'S A TIE';
-    } else {
-        if (user.highestScore < user.score) {
-            user.highestScore = user.score;
-            record.textContent = 'RECORD: ' + user.highestScore; 
+    setTimeout(() => {   
+        const h3Tag = document.createElement('h3');
+        if (user.selection === 'paper' && computer.selection === 'rock'
+        || user.selection === 'scissors' && computer.selection === 'paper'
+        || user.selection === 'rock' && computer.selection === 'scissors') {
+            user.score++
+            matchResult.appendChild(h3Tag);
+            matchResult.lastChild.textContent = 'YOU WIN';
+            userSelectionDisplay.lastChild.classList.add('winner');
+        } else if ( user.selection === computer.selection) {
+            matchResult.appendChild(h3Tag);
+            matchResult.lastChild.textContent = 'IT\'S A TIE';
+        } else {
+            if (user.highestScore < user.score) {
+                user.highestScore = user.score;
+                record.textContent = 'RECORD: ' + user.highestScore; 
+            }
+            user.score = 0;
+            matchResult.appendChild(h3Tag);
+            matchResult.lastChild.textContent = 'YOU LOSE';
+            computerChoise.lastChild.classList.add('winner')
         }
-        user.score = 0;
-        matchResult.appendChild(h3Tag);
-        matchResult.lastChild.textContent = 'YOU LOSE';
-        computerChoise.lastChild.classList.add('winner')
-
-    }
-    renderPlayAgainBtn();
+        renderPlayAgainBtn();
+    }, 150);
 }
 
 function renderPlayAgainBtn () {
@@ -158,3 +162,43 @@ function activePlayAgainBtn () {
     matchContainer.classList.add('transparent');
     scoreDisplay.textContent = user.score;
 }
+
+// rules btn 
+rulesBtn.addEventListener('click', renderRules);
+function renderRules() {
+    rulesPopup.classList.remove('transparent');
+}
+
+closeRulesBtn.addEventListener('click', closeRulesPopup);
+function closeRulesPopup() {
+    rulesPopup.classList.add('transparent');
+}
+
+// function renderRules() {
+//     const divTag = document.createElement('div');
+//     main.appendChild(divTag);
+//     main.lastChild.classList.add('rules-popup');
+//     // main.lastChild.lastChild.appendChild(divTag)
+//     // document.querySelector('rules-popup').appendChild(divTag)
+//     main.lastChild.lastChild.classList.add('rulse-popup__header');
+//     // renderPopupImages('icon-close', 'rules-popup__close');
+//     // renderPopupImages('image-rules', 'rules-popup__rules');
+// }
+
+// function renderPopupImages(type, classname, header) {
+//     if (header === true) {
+//         const divTag = document.createElement('div');
+//         main.lastChild.appendChild(divTag);
+//     }
+//     const imgTag = document.createElement('img');
+//     main.lastChild.lastChild.appendChild(imgTag);
+//     main.lastChild.lastChild.classList.add(classname);
+//     main.lastChild.lastChild.src = './images/' + type + '.svg';
+//     let stringSplit = type.split('-');
+//     console.log(stringSplit)
+//     main.lastChild.lastChild.alt = stringSplit[1];
+// }
+// function renderPopupHeadline() {
+//     const h2Tag = document.createElement('h2');
+//     main.lastChild
+// }

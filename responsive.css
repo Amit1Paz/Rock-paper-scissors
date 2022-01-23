@@ -8,6 +8,9 @@
     header {
         width: 30rem;
     }
+    .choose-container {
+        margin: 2rem 0;
+    }
     .match-container {
         flex-wrap: wrap;
         justify-content: center;
@@ -33,11 +36,13 @@
         font-size: 14px;
     }
     .choose-container {
-        margin: 2rem 0;
         background-size: 60%;
     }
     footer {
         justify-content: center;
+    }
+    .rules-popup__rules-img {
+        width: 95%;
     }
 }
 @media (max-width: 440px) {
@@ -45,7 +50,7 @@
         font-size: 12px;
     }
     .choose-container {
-        margin: 2rem;
+        margin: 2rem 0;
         background-size: 60%;
     }
     footer {
@@ -62,7 +67,6 @@
         padding: 5rem 0;
     }
     .choose-container {
-        margin: 2rem;
         height: 25rem;
         background-size: 60%;
     }
