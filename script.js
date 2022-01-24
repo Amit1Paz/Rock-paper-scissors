@@ -173,32 +173,3 @@ closeRulesBtn.addEventListener('click', closeRulesPopup);
 function closeRulesPopup() {
     rulesPopup.classList.add('transparent');
 }
-
-// function renderRules() {
-//     const divTag = document.createElement('div');
-//     main.appendChild(divTag);
-//     main.lastChild.classList.add('rules-popup');
-//     // main.lastChild.lastChild.appendChild(divTag)
-//     // document.querySelector('rules-popup').appendChild(divTag)
-//     main.lastChild.lastChild.classList.add('rulse-popup__header');
-//     // renderPopupImages('icon-close', 'rules-popup__close');
-//     // renderPopupImages('image-rules', 'rules-popup__rules');
-// }
-
-// function renderPopupImages(type, classname, header) {
-//     if (header === true) {
-//         const divTag = document.createElement('div');
-//         main.lastChild.appendChild(divTag);
-//     }
-//     const imgTag = document.createElement('img');
-//     main.lastChild.lastChild.appendChild(imgTag);
-//     main.lastChild.lastChild.classList.add(classname);
-//     main.lastChild.lastChild.src = './images/' + type + '.svg';
-//     let stringSplit = type.split('-');
-//     console.log(stringSplit)
-//     main.lastChild.lastChild.alt = stringSplit[1];
-// }
-// function renderPopupHeadline() {
-//     const h2Tag = document.createElement('h2');
-//     main.lastChild
-// }
